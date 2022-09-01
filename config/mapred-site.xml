@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
-<!-- 指定 MapReduce 程序运行在 Yarn 上 -->
- <property>
- <name>mapreduce.framework.name</name>
- <value>yarn</value>
- </property>
+        <!-- 指定 MapReduce 程序运行在 Yarn 上 -->
+        <property>
+                <name>mapreduce.framework.name</name>
+                <value>yarn</value>
+        </property>
+        <property>
+                <name>yarn.app.mapreduce.am.env</name>
+                <value>HADOOP_MAPRED_HOME=/opt/module/hadoop-3.2.4</value>
+        </property>
+        <property>
+                <name>mapreduce.map.env</name>
+                <value>HADOOP_MAPRED_HOME=/opt/module/hadoop-3.2.4</value>
+        </property>
+        <property>
+                <name>mapreduce.reduce.env</name>
+                <value>HADOOP_MAPRED_HOME=/opt/module/hadoop-3.2.4</value>
+        </property>
 </configuration>
