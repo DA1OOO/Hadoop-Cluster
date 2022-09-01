@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+<!-- nn web 端访问地址-->
+<property>
+ <name>dfs.namenode.http-address</name>
+ <value>hadoop102:9870</value>
+ </property>
+<!-- 2nn web 端访问地址-->
+ <property>
+ <name>dfs.namenode.secondary.http-address</name>
+ <value>hadoop104:9868</value>
+ </property>
+</configuration>

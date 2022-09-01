@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+<!-- 指定 MapReduce 程序运行在 Yarn 上 -->
+ <property>
+ <name>mapreduce.framework.name</name>
+ <value>yarn</value>
+ </property>
+</configuration>

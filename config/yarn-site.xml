@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+ <!-- 指定 MR 走 shuffle -->
+ <property>
+ <name>yarn.nodemanager.aux-services</name>
+ <value>mapreduce_shuffle</value>
+ </property>
+ <!-- 指定 ResourceManager 的地址-->
+ <property>
+ <name>yarn.resourcemanager.hostname</name>
+ <value>hadoop103</value>
+ </property>
+ <!-- 环境变量的继承 -->
+ <property>
+ <name>yarn.nodemanager.env-whitelist</name>
+ 
+<value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CO
+NF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAP
+RED_HOME</value>
+ </property>
+</configuration>
