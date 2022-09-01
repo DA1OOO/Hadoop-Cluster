@@ -11,7 +11,7 @@
  <name>hadoop.tmp.dir</name>
  <value>/opt/module/hadoop-3.2.4/data</value>
  </property>
- <!-- 配置 HDFS 网页登录使用的静态用户为 atguigu -->
+ <!-- 配置 HDFS 网页登录使用的静态用户 -->
  <property>
  <name>hadoop.http.staticuser.user</name>
  <value>daiyayuan</value>
