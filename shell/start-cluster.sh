@@ -9,3 +9,7 @@ sbin/start-dfs.sh
 # 在配置了 ResourceManager 的节点（hadoop103）启动 YARN
 # [da1@hadoop103 hadoop-3.2.4]$ 
 sbin/start-yarn.sh
+
+# hadoop102中启动历史服务器
+# [da1@hadoop102 hadoop]$ 
+mapred --daemon start historyserver
