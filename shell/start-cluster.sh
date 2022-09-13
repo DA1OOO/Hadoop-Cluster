@@ -1,4 +1,4 @@
-# 如果集群是第一次启动
+# 如果集群是第一次启动，格式化集群
 # [da1@hadoop102 hadoop-3.2.4]$ 
 hdfs namenode -format
 
