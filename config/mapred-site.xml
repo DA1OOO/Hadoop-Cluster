@@ -18,4 +18,14 @@
                 <name>mapreduce.reduce.env</name>
                 <value>HADOOP_MAPRED_HOME=/opt/module/hadoop-3.2.4</value>
         </property>
+		<!-- 历史服务器端地址 -->
+		<property>
+				<name>mapreduce.jobhistory.address</name>
+				<value>hadoop102:10020</value>
+		</property>
+		<!-- 历史服务器 web 端地址 -->
+		<property>
+			<name>mapreduce.jobhistory.webapp.address</name>
+			<value>hadoop102:19888</value>
+		</property>
 </configuration>
