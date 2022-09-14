@@ -18,5 +18,20 @@
 <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CO
 NF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAP
 RED_HOME</value>
- </property>
+ </property
+ <!-- 开启日志聚集功能 -->
+<property>
+ <name>yarn.log-aggregation-enable</name>
+ <value>true</value>
+</property>
+<!-- 设置日志聚集服务器地址 -->
+<property> 
+ <name>yarn.log.server.url</name> 
+ <value>http://hadoop102:19888/jobhistory/logs</value>
+</property>
+<!-- 设置日志保留时间为 7 天 -->
+<property>
+ <name>yarn.log-aggregation.retain-seconds</name>
+ <value>604800</value>
+</property>
 </configuration>
