@@ -32,6 +32,8 @@ public class HdfsClient {
         URI uri = new URI("hdfs://hadoop102:8020");
         // 配置文件
         Configuration configuration = new Configuration();
+        // 代码中进行配置的优先级最高
+        configuration.set("dfs.replication", "3");
         // 用户
         String user = "daiyayuan";
         // 获取客户端对象
