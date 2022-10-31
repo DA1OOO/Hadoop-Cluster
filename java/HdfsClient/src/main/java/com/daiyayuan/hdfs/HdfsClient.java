@@ -78,4 +78,26 @@ public class HdfsClient {
          */
         fileSystem.copyFromLocalFile(false, false, new Path("C:\\Users\\Administrator\\Desktop\\Hadoop Cluster\\schedule.txt"), new Path("/xiyou/huaguoshan"));
     }
+
+    /**
+     * 下载文件
+     *
+     * @throws IOException
+     */
+    @Test
+    public void download() throws IOException {
+        /**
+         * 从hdfs向本地拷贝数据
+         * Parameter1: 是否删除原数据
+         * Parameter2: 原数据路径
+         * Parameter3：目的地路径
+         * Parameter4: 是否开启文件校验
+         */
+        fileSystem.copyToLocalFile(false, new Path("hdfs://hadoop102/xiyou/huaguoshan"), new Path("C:\\Users\\Administrator\\Desktop"), true);
+    }
+
+    @Test
+    public void delete() {
+
+    }
 }
