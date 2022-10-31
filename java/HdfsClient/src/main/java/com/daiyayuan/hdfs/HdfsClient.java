@@ -45,4 +45,19 @@ public class HdfsClient {
         // 创建文件夹
         fileSystem.mkdirs(new Path("/xiyou/huaguoshan"));
     }
+
+    /**
+     * 上传文件
+     */
+    @Test
+    public void upload() throws IOException {
+        /**
+         * 从本地向hdfs拷贝数据
+         * Parameter1: 是否删除原数据
+         * Parameter2: 是否允许覆盖
+         * Parameter3: 原数据路径
+         * Parameter4：目的地路径
+          */
+        fileSystem.copyFromLocalFile(false, false, new Path("C:\\Users\\Administrator\\Desktop\\Hadoop Cluster\\schedule.txt"), new Path("/xiyou/huaguoshan"));
+    }
 }
