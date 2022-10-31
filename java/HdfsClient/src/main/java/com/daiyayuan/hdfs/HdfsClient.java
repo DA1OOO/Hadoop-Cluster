@@ -110,4 +110,19 @@ public class HdfsClient {
          */
         fileSystem.delete(new Path("hdfs://hadoop102/xiyou"), true);
     }
+
+    /**
+     * 文件移动和更名
+     *
+     * @throws IOException
+     */
+    @Test
+    public void move() throws IOException {
+        /**
+         * 文件移动和更名
+         * Parameter1: 原文件路径
+         * Parameter2: 目标文件路径
+         */
+        fileSystem.rename(new Path("/input/work.txt"), new Path("/dyy.txt"));
+    }
 }
