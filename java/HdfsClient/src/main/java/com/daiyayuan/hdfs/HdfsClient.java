@@ -96,8 +96,18 @@ public class HdfsClient {
         fileSystem.copyToLocalFile(false, new Path("hdfs://hadoop102/xiyou/huaguoshan"), new Path("C:\\Users\\Administrator\\Desktop"), true);
     }
 
+    /**
+     * 删除文件
+     *
+     * @throws IOException
+     */
     @Test
-    public void delete() {
-
+    public void delete() throws IOException {
+        /**
+         * 在hdfs中删除数据数据
+         * Parameter1: 删除路径
+         * Parameter2: 是否递归删除
+         */
+        fileSystem.delete(new Path("hdfs://hadoop102/xiyou"), true);
     }
 }
