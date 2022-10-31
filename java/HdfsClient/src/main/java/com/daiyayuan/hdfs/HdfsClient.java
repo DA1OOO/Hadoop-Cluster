@@ -19,6 +19,12 @@ public class HdfsClient {
 
     private FileSystem fileSystem;
 
+    /**
+     * 初始化客户端
+     * @throws URISyntaxException
+     * @throws IOException
+     * @throws InterruptedException
+     */
     @Before
     public void init() throws URISyntaxException, IOException, InterruptedException {
         // name node的通讯端口
@@ -31,6 +37,10 @@ public class HdfsClient {
         fileSystem = FileSystem.get(uri, configuration, user);
     }
 
+    /**
+     * 关闭客户端
+     * @throws IOException
+     */
     @After
     public void close() throws IOException {
         // 关闭资源
@@ -39,6 +49,7 @@ public class HdfsClient {
 
     /**
      * 创建文件夹
+     * @throws IOException
      */
     @Test
     public void mkdir() throws IOException {
@@ -48,6 +59,7 @@ public class HdfsClient {
 
     /**
      * 上传文件
+     * @throws IOException
      */
     @Test
     public void upload() throws IOException {
