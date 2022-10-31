@@ -21,6 +21,7 @@ public class HdfsClient {
 
     /**
      * 初始化客户端
+     *
      * @throws URISyntaxException
      * @throws IOException
      * @throws InterruptedException
@@ -39,6 +40,7 @@ public class HdfsClient {
 
     /**
      * 关闭客户端
+     *
      * @throws IOException
      */
     @After
@@ -49,6 +51,7 @@ public class HdfsClient {
 
     /**
      * 创建文件夹
+     *
      * @throws IOException
      */
     @Test
@@ -59,6 +62,7 @@ public class HdfsClient {
 
     /**
      * 上传文件
+     *
      * @throws IOException
      */
     @Test
@@ -69,7 +73,7 @@ public class HdfsClient {
          * Parameter2: 是否允许覆盖
          * Parameter3: 原数据路径
          * Parameter4：目的地路径
-          */
+         */
         fileSystem.copyFromLocalFile(false, false, new Path("C:\\Users\\Administrator\\Desktop\\Hadoop Cluster\\schedule.txt"), new Path("/xiyou/huaguoshan"));
     }
 }
