@@ -2,8 +2,7 @@ package com.daiyayuan.hdfs;
 
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +10,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 /**
  * HDFS客户端
@@ -124,5 +124,32 @@ public class HdfsClient {
          * Parameter2: 目标文件路径
          */
         fileSystem.rename(new Path("/input/work.txt"), new Path("/dyy.txt"));
+    }
+
+    /**
+     * 获取文件详情
+     *
+     * @throws IOException
+     */
+    @Test
+    public void fileDetail() throws IOException {
+        // 获取所有文件信息
+        RemoteIterator<LocatedFileStatus> listFiles = fileSystem.listFiles(new Path("/"), true);
+        // 遍历文件
+        while (listFiles.hasNext()) {
+            LocatedFileStatus fileStatus = listFiles.next();
+            System.out.println("=====>" + fileStatus.getPath() + "<=====");
+            System.out.println(fileStatus.getPermission());
+            System.out.println(fileStatus.getOwner());
+            System.out.println(fileStatus.getGroup());
+            System.out.println(fileStatus.getLen());
+            System.out.println(fileStatus.getModificationTime());
+            System.out.println(fileStatus.getReplication());
+            System.out.println(fileStatus.getBlockSize());
+            System.out.println(fileStatus.getPath().getName());
+            // 获取块信息
+            BlockLocation[] blockLocations = fileStatus.getBlockLocations();
+            System.out.println(Arrays.toString(blockLocations));
+        }
     }
 }
