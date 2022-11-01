@@ -3,6 +3,7 @@ package com.daiyayuan.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
+import org.apache.hadoop.yarn.webapp.hamlet2.Hamlet;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -151,5 +152,25 @@ public class HdfsClient {
             BlockLocation[] blockLocations = fileStatus.getBlockLocations();
             System.out.println(Arrays.toString(blockLocations));
         }
+    }
+
+    /**
+     * 判断为文件或者文件夹
+     *
+     * @throws IOException
+     */
+    @Test
+    public void isFileOrPack() throws IOException {
+        FileStatus[] fileStatuses = fileSystem.listStatus(new Path("/"));
+        for (FileStatus status : fileStatuses) {
+            if (status.isFile()) {
+                // 为一个文件
+                System.out.println("File:" + status.getPath().getName());
+            } else {
+                // 为一个目录
+                System.out.println("Package:" + status.getPath().getName());
+            }
+        }
+
     }
 }
